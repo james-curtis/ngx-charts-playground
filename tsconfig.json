@@ -5,7 +5,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noImplicitOverride": true,
+    "noImplicitOverride": false,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -17,8 +17,12 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
+    "strictNullChecks": false,
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
     "lib": [
       "ES2022",
       "dom"
