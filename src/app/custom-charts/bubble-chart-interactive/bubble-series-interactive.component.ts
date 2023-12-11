@@ -1,17 +1,15 @@
 import {
+  ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
+  OnChanges,
   Output,
   SimpleChanges,
-  EventEmitter,
-  OnChanges,
-  ChangeDetectionStrategy,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
-import { trigger, style, animate, transition } from '@angular/animations';
-import { formatLabel } from '@swimlane/ngx-charts/common/label.helper';
-import { PlacementTypes } from '@swimlane/ngx-charts/common/tooltip/position';
-import { StyleTypes } from '@swimlane/ngx-charts/common/tooltip/style.type';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { formatLabel, PlacementTypes, StyleTypes } from '@swimlane/ngx-charts';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -52,12 +50,12 @@ import { StyleTypes } from '@swimlane/ngx-charts/common/tooltip/style.type';
       transition(':enter', [
         style({
           opacity: 0,
-          transform: 'scale(0)'
+          transform: 'scale(0)',
         }),
-        animate(250, style({ opacity: 1, transform: 'scale(1)' }))
-      ])
-    ])
-  ]
+        animate(250, style({ opacity: 1, transform: 'scale(1)' })),
+      ]),
+    ]),
+  ],
 })
 export class BubbleSeriesInteractiveComponent implements OnChanges {
   @Input() data;
@@ -71,7 +69,7 @@ export class BubbleSeriesInteractiveComponent implements OnChanges {
   @Input() activeEntries: any[];
   @Input() xAxisLabel: string;
   @Input() yAxisLabel: string;
-  @Input() tooltipDisabled: boolean = false;
+  @Input() tooltipDisabled = false;
   @Input() tooltipTemplate: TemplateRef<any>;
 
   @Output() select = new EventEmitter();
@@ -108,7 +106,10 @@ export class BubbleSeriesInteractiveComponent implements OnChanges {
           const cx = this.xScaleType === 'linear' ? this.xScale(Number(x)) : this.xScale(x);
           const cy = this.yScaleType === 'linear' ? this.yScale(Number(y)) : this.yScale(y);
 
-          const color = this.colors.scaleType === 'linear' ? this.colors.getColor(r) : this.colors.getColor(seriesName);
+          const color =
+            this.colors.scaleType === 'linear'
+              ? this.colors.getColor(r)
+              : this.colors.getColor(seriesName);
 
           const isActive = !this.activeEntries.length ? true : this.isActive({ name: seriesName });
           const opacity = isActive ? 1 : 0.3;
@@ -118,7 +119,7 @@ export class BubbleSeriesInteractiveComponent implements OnChanges {
             name: d.name,
             value: d.y,
             x: d.x,
-            radius: d.r
+            radius: d.r,
           };
 
           return {
@@ -137,11 +138,11 @@ export class BubbleSeriesInteractiveComponent implements OnChanges {
             opacity,
             seriesName,
             isActive,
-            transform: `translate(${cx},${cy})`
+            transform: `translate(${cx},${cy})`,
           };
         }
       })
-      .filter(circle => circle !== undefined);
+      .filter((circle) => circle !== undefined);
   }
 
   getTooltipText(circle): string {
@@ -158,7 +159,8 @@ export class BubbleSeriesInteractiveComponent implements OnChanges {
       hasSeriesName && hasTooltipLabel
         ? `${circle.seriesName} • ${circle.tooltipLabel}`
         : circle.seriesName + circle.tooltipLabel;
-    const tooltipTitle = hasSeriesName || hasTooltipLabel ? `<span class="tooltip-label">${name}</span>` : '';
+    const tooltipTitle =
+      hasSeriesName || hasTooltipLabel ? `<span class="tooltip-label">${name}</span>` : '';
 
     return `
       ${tooltipTitle}
@@ -179,7 +181,7 @@ export class BubbleSeriesInteractiveComponent implements OnChanges {
 
   isActive(entry): boolean {
     if (!this.activeEntries) return false;
-    const item = this.activeEntries.find(d => {
+    const item = this.activeEntries.find((d) => {
       return entry.name === d.name;
     });
     return item !== undefined;
