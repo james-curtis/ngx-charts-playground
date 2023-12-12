@@ -44,7 +44,11 @@ module.exports = {
         'plugin:@angular-eslint/template/recommended',
         'plugin:@angular-eslint/template/accessibility',
       ],
-      rules: {},
+      rules: {
+        '@angular-eslint/template/interactive-supports-focus': 'warn',
+        '@angular-eslint/template/label-has-associated-control': 'warn',
+        '@angular-eslint/template/click-events-have-key-events': 'warn',
+      },
     },
-  ]
+  ],
 };

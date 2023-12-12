@@ -9,6 +9,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ComboChartComponent, ComboSeriesVerticalComponent } from './custom-charts/combo-chart';
 import { BubbleChartInteractiveModule } from './custom-charts/bubble-chart-interactive';
 import { FormsModule } from '@angular/forms';
+import { NgxUIModule } from '@swimlane/ngx-ui';
 
 @NgModule({
   providers: [provideClientHydration()],
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     NgxChartsModule,
     BubbleChartInteractiveModule,
     FormsModule,
+    NgxUIModule,
   ],
   bootstrap: [AppComponent],
 })

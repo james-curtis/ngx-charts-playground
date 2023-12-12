@@ -39,8 +39,8 @@ dependencies:
     specifier: ^20.5.0
     version: 20.5.0(@angular/animations@17.0.6)(@angular/cdk@17.0.3)(@angular/common@17.0.6)(@angular/core@17.0.6)(@angular/forms@17.0.6)(@angular/platform-browser-dynamic@17.0.6)(@angular/platform-browser@17.0.6)(rxjs@7.8.1)
   '@swimlane/ngx-ui':
-    specifier: ^46.0.0
-    version: 46.0.0(@angular/animations@17.0.6)(@angular/cdk@17.0.3)(@angular/common@17.0.6)(@angular/core@17.0.6)(@angular/forms@17.0.6)(@angular/platform-browser@17.0.6)(@types/json-schema@7.0.15)(ajv@6.12.6)(codemirror@5.65.8)(core-js@3.34.0)(json-schema@0.4.0)(moment-timezone@0.5.43)(moment@2.29.4)(ng-in-viewport@6.1.5)(ngx-autosize-input@2.3.7)(rxjs@7.8.1)(zone.js@0.14.2)
+    specifier: ~35.6.5
+    version: 35.6.8(@angular/animations@17.0.6)(@angular/cdk@17.0.3)(@angular/common@17.0.6)(@angular/core@17.0.6)(@angular/forms@17.0.6)(@angular/platform-browser@17.0.6)(@types/json-schema@7.0.15)(ajv@6.12.6)(codemirror@5.42.0)(core-js@2.6.12)(json-schema@0.4.0)(moment-timezone@0.5.43)(moment@2.29.4)(ng-in-viewport@6.1.5)(ngx-autosize-input@2.3.7)(rxjs@7.8.1)(zone.js@0.14.2)
   d3-array:
     specifier: ^3.2.4
     version: 3.2.4
@@ -2905,9 +2905,14 @@ packages:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: true
 
-  /@swimlane/ng2-file-upload@1.2.0:
-    resolution: {integrity: sha512-1T7vqUAQ998IaGwxDCLP9z9NEsBszDnXDJaE6wB2oxKAJD/dU3x+TiHwLJJza8hH853oWd37zpfkDnYs7lSG+w==}
+  /@swimlane/ng2-file-upload@1.1.0(@angular/common@17.0.6)(@angular/core@17.0.6):
+    resolution: {integrity: sha512-YjqMQJUZt82Eji07n/0peXIaUb+ameWCsvEUlJUAijG504HThqNPkVQF03qnA5GtPatWO0/D5APJIhIPIj/ESg==}
+    peerDependencies:
+      '@angular/common': ^11.0.0
+      '@angular/core': ^11.0.0
     dependencies:
+      '@angular/common': 17.0.6(@angular/core@17.0.6)(rxjs@7.8.1)
+      '@angular/core': 17.0.6(rxjs@7.8.1)(zone.js@0.14.2)
       tslib: 2.6.2
     dev: false
 
@@ -2948,27 +2953,27 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@swimlane/ngx-ui@46.0.0(@angular/animations@17.0.6)(@angular/cdk@17.0.3)(@angular/common@17.0.6)(@angular/core@17.0.6)(@angular/forms@17.0.6)(@angular/platform-browser@17.0.6)(@types/json-schema@7.0.15)(ajv@6.12.6)(codemirror@5.65.8)(core-js@3.34.0)(json-schema@0.4.0)(moment-timezone@0.5.43)(moment@2.29.4)(ng-in-viewport@6.1.5)(ngx-autosize-input@2.3.7)(rxjs@7.8.1)(zone.js@0.14.2):
-    resolution: {integrity: sha512-DHxzxw8TWhPPVpOK57Pa/UPQJ8JzQpONv6Zlvc2A7FzonTAedB10EyxHXZV5rFUvsAdsaeC7zdqc+Z4zmvtAFA==}
+  /@swimlane/ngx-ui@35.6.8(@angular/animations@17.0.6)(@angular/cdk@17.0.3)(@angular/common@17.0.6)(@angular/core@17.0.6)(@angular/forms@17.0.6)(@angular/platform-browser@17.0.6)(@types/json-schema@7.0.15)(ajv@6.12.6)(codemirror@5.42.0)(core-js@2.6.12)(json-schema@0.4.0)(moment-timezone@0.5.43)(moment@2.29.4)(ng-in-viewport@6.1.5)(ngx-autosize-input@2.3.7)(rxjs@7.8.1)(zone.js@0.14.2):
+    resolution: {integrity: sha512-U3t7mYq1MBxfQW9ojuj0SIH2//+mBcdsw9UFUsvHCWmx2lOFBYGsmhAqrBdpQrleWFtPLWm4JYDUusXohoC01Q==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
-      '@angular/animations': '>=12.2.2'
-      '@angular/cdk': '>=12.2.2'
-      '@angular/common': '>=12.2.16'
-      '@angular/core': '>=12.2.6'
-      '@angular/forms': '>=12.2.2'
-      '@angular/platform-browser': '>=12.2.2'
-      '@types/json-schema': ^7.0.9
-      ajv: ^6.12.6
-      codemirror: 5.65.8
-      core-js: ^3.6.5
+      '@angular/animations': '>=10.0.0'
+      '@angular/cdk': '>=10.0.0'
+      '@angular/common': '>=10.0.0'
+      '@angular/core': '>=10.0.0'
+      '@angular/forms': '>=10.0.0'
+      '@angular/platform-browser': '>=10.0.0'
+      '@types/json-schema': ^7.0.3
+      ajv: ^6.5.0
+      codemirror: 5.42.0
+      core-js: ^2.5.0
       json-schema: '*'
-      moment: ^2.29.1
-      moment-timezone: ^0.5.33
+      moment: ^2.21.0
+      moment-timezone: ^0.5.23
       ng-in-viewport: ^6.1.5
       ngx-autosize-input: ^2.3.7
-      rxjs: ^6.6.7|| ^7.4.0
-      zone.js: ^0.11.4
+      rxjs: ^6.5.0
+      zone.js: ^0.10.2
     dependencies:
       '@angular/animations': 17.0.6(@angular/core@17.0.6)
       '@angular/cdk': 17.0.3(@angular/common@17.0.6)(@angular/core@17.0.6)(rxjs@7.8.1)
@@ -2976,18 +2981,18 @@ packages:
       '@angular/core': 17.0.6(rxjs@7.8.1)(zone.js@0.14.2)
       '@angular/forms': 17.0.6(@angular/common@17.0.6)(@angular/core@17.0.6)(@angular/platform-browser@17.0.6)(rxjs@7.8.1)
       '@angular/platform-browser': 17.0.6(@angular/animations@17.0.6)(@angular/common@17.0.6)(@angular/core@17.0.6)
-      '@swimlane/ng2-file-upload': 1.2.0
+      '@swimlane/ng2-file-upload': 1.1.0(@angular/common@17.0.6)(@angular/core@17.0.6)
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
-      codemirror: 5.65.8
-      core-js: 3.34.0
+      codemirror: 5.42.0
+      core-js: 2.6.12
       json-schema: 0.4.0
       moment: 2.29.4
       moment-timezone: 0.5.43
       mousetrap: 1.6.5
       ng-in-viewport: 6.1.5(@angular/common@17.0.6)(@angular/core@17.0.6)(rxjs@7.8.1)
       ngx-autosize-input: 2.3.7(@angular/common@17.0.6)(@angular/core@17.0.6)
-      normalize.css: 8.0.1
+      normalize.css: 5.0.0
       rxjs: 7.8.1
       tslib: 2.6.2
       zone.js: 0.14.2
@@ -4296,8 +4301,8 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
 
-  /codemirror@5.65.8:
-    resolution: {integrity: sha512-TNGkSkkoAsmZSf6W6g35LMVQJBHKasc2CKwhr/fTxSYun7cn6J+CbtyNjV/MYlFVkNTsqZoviegyCZimWhoMMA==}
+  /codemirror@5.42.0:
+    resolution: {integrity: sha512-pbApC8zDzItP3HRphD6kQVwS976qB5Qi0hU3MZMixLk+AyugOW1RF+8XJEjeyl5yWsHNe88tDUxzeRh5AOxPRw==}
     dev: false
 
   /color-convert@1.9.3:
@@ -4499,8 +4504,9 @@ packages:
       browserslist: 4.22.2
     dev: true
 
-  /core-js@3.34.0:
-    resolution: {integrity: sha512-aDdvlDder8QmY91H88GzNi9EtQi2TjvQhpCX6B1v/dAZHU1AuLgHvRh54RiOerpEhEW46Tkf+vgAViB/CWC0ag==}
+  /core-js@2.6.12:
+    resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
     dev: false
 
@@ -7517,8 +7523,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /normalize.css@8.0.1:
-    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+  /normalize.css@5.0.0:
+    resolution: {integrity: sha512-/b05fOCyJtLDXlxSVdqyLWBrqi39nAUTeBOKrtLQw+a9FuMwNqguB6X4Mlf7C4QxTs/2xu8SlzE6Xbp9Smrq7A==}
     dev: false
 
   /npm-bundled@3.0.0:
