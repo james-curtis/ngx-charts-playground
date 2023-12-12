@@ -131,7 +131,7 @@ import { isPlatformServer } from '@angular/common';
       </svg:g>
     </ngx-charts-chart>
   `,
-  styleUrls: ['../../../../projects/swimlane/ngx-charts/src/lib/common/base-chart.component.scss'],
+  styleUrls: ['../../base-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   animations: [

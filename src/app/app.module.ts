@@ -3,20 +3,15 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { APP_BASE_HREF } from '@angular/common';
 import { SparklineComponent } from './custom-charts/sparkline/sparkline.component';
 import { TimelineFilterBarChartComponent } from './custom-charts/timeline-filter-bar-chart/timeline-filter-bar-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ComboChartComponent, ComboSeriesVerticalComponent } from './custom-charts/combo-chart';
+import { BubbleChartInteractiveModule } from './custom-charts/bubble-chart-interactive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  providers: [
-    {
-      provide: APP_BASE_HREF,
-      useFactory: getBaseLocation,
-    },
-    provideClientHydration(),
-  ],
+  providers: [provideClientHydration()],
   declarations: [
     AppComponent,
     SparklineComponent,
@@ -24,13 +19,13 @@ import { ComboChartComponent, ComboSeriesVerticalComponent } from './custom-char
     ComboChartComponent,
     ComboSeriesVerticalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgxChartsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgxChartsModule,
+    BubbleChartInteractiveModule,
+    FormsModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-export function getBaseLocation() {
-  const paths: string[] = location.pathname.split('/').splice(1, 1);
-  const basePath: string = (paths && paths[0]) || '';
-  return '/' + basePath;
-}

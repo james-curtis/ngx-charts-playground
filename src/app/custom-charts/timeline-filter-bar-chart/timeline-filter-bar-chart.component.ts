@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { scaleBand, scaleLinear, scaleTime } from 'd3-scale';
 import { brushX } from 'd3-brush';
 import { select } from 'd3-selection';
@@ -8,7 +15,7 @@ import {
   ColorHelper,
   id,
   ScaleType,
-  ViewDimensions
+  ViewDimensions,
 } from '@swimlane/ngx-charts';
 
 @Component({
@@ -65,14 +72,20 @@ import {
             values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"
           />
         </svg:filter>
-        <svg:rect x="0" [attr.width]="dims.width" y="0" [attr.height]="dims.height" class="brush-background" />
+        <svg:rect
+          x="0"
+          [attr.width]="dims.width"
+          y="0"
+          [attr.height]="dims.height"
+          class="brush-background"
+        />
         <svg:g class="brush"></svg:g>
       </svg:g>
     </ngx-charts-chart>
   `,
-  styleUrls: ['../../../../projects/swimlane/ngx-charts/src/lib/common/base-chart.component.scss'],
+  styleUrls: ['../../base-chart.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimelineFilterBarChartComponent extends BaseChartComponent {
   @Input() autoScale = false;
@@ -85,9 +98,9 @@ export class TimelineFilterBarChartComponent extends BaseChartComponent {
   @Input() xAxisLabel;
   @Input() yAxisLabel;
   @Input() gradient;
-  @Input() showGridLines: boolean = true;
-  @Input() animations: boolean = true;
-  @Input() noBarWhenZero: boolean = true;
+  @Input() showGridLines = true;
+  @Input() animations = true;
+  @Input() noBarWhenZero = true;
   @Input() wrapTicks = false;
 
   @Output() onFilter = new EventEmitter();
@@ -99,14 +112,14 @@ export class TimelineFilterBarChartComponent extends BaseChartComponent {
   seriesDomain: any;
   yScale: any;
   xScale: any;
-  xAxisHeight: number = 0;
-  yAxisWidth: number = 0;
+  xAxisHeight = 0;
+  yAxisWidth = 0;
   timeScale: any;
   colors: ColorHelper;
   scaleType: string;
   transform: string;
   margin: any[] = [10, 20, 10, 0];
-  initialized: boolean = false;
+  initialized = false;
   filterId: any;
   filter: any;
   brush: any;
@@ -124,7 +137,7 @@ export class TimelineFilterBarChartComponent extends BaseChartComponent {
       showXLabel: this.showXAxisLabel,
       showYLabel: this.showYAxisLabel,
       showLegend: false,
-      legendType: this.schemeType
+      legendType: this.schemeType,
     });
 
     this.xDomain = this.getXDomain();
@@ -262,7 +275,7 @@ export class TimelineFilterBarChartComponent extends BaseChartComponent {
     this.brush = brushX()
       .extent([
         [0, 0],
-        [width, height]
+        [width, height],
       ])
       .on('brush end', ({ selection }) => {
         const newSelection = selection || this.xScale.range();
@@ -283,7 +296,7 @@ export class TimelineFilterBarChartComponent extends BaseChartComponent {
 
     this.brush.extent([
       [0, 0],
-      [width, height]
+      [width, height],
     ]);
     select(this.chartElement.nativeElement).select('.brush').call(this.brush);
 

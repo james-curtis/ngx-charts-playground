@@ -35,7 +35,7 @@ import {
       </svg:g>
     </ngx-charts-chart>
   `,
-  styleUrls: ['@swimlane/ngx-charts/src/lib/common/base-chart.component.scss'],
+  styleUrls: ['../../base-chart.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -2,6 +2,6 @@
  * @type {import('@types/lint-staged').Config}
  */
 module.exports = {
-  '*.{vue,js,ts,jsx,tsx,vue,html}': ['eslint', 'prettier -c'],
-  '*.scss': ['prettier -c'],
+  '*.{vue,js,ts,jsx,tsx,html}': ['eslint --quiet', 'prettier -c'],
+  '*.{scss,less,css,sass}': ['prettier -c'],
 };
